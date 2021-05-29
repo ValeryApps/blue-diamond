@@ -1,0 +1,12 @@
+.bg-alliance{
+  background: #C21725;
+  color: white;
+}
+.modal {
+  height: auto;
+  top: auto;
+  left: auto;
+  bottom: auto;
+  right: auto;
+  padding-bottom: 12px;
+}

@@ -1,0 +1,10 @@
+.idea
+.vs
+bin
+.vscode
+obj
+PublishProfiles
+appsettings.Development.json
+appsettings.json
+*/build.rar
+.github
