@@ -9,18 +9,20 @@ import Home from "./Home";
 function App() {
   return (
     <>
-        <Route exact path="/" component={Home} />
-        <Route
-          path={"/(.+)"}
-          render={() => {
-           return <>
-           <NavMenu/>
+      <Route exact path="/" component={Home} />
+      <Route
+        path={"/(.+)"}
+        render={() => {
+          return (
+            <>
+              <NavMenu />
               <Route exact path="/courses" component={CoursesList} />
               <Route exact path="/memberForm" component={MemberForm} />
               <Route exact path="/members" component={MemberList} />
-            </>;
-          }}
-        />
+            </>
+          );
+        }}
+      />
     </>
   );
 }

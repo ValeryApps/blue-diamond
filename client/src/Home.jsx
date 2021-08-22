@@ -9,7 +9,8 @@ import Services from "./components/Services";
 import Team from "./components/Team";
 import Testimotials from "./components/Testimotials";
 import WhyUs from "./components/WhyUs";
-import Typewriter from "typewriter-effect"
+import Typewriter from "typewriter-effect";
+import NavMenu from "./components/NavBar";
 
 const Home = () => {
   // const scrollTop = ()=>{
@@ -18,10 +19,10 @@ const Home = () => {
   const src1 = "assets/img/testimonials/testimonials-5.jpg";
   const src2 = "assets/img/testimonials/testimonials-2.jpg";
   const src3 = "assets/img/testimonials/testimonials-4.jpg";
+  const scrs = [src1, src2, src3];
   return (
     <>
       <header id="header" className="fixed-top d-flex align-items-center">
-  
         <div className="container">
           <div className="header-container d-flex align-items-center">
             <div className="logo mr-auto">
@@ -34,141 +35,41 @@ const Home = () => {
                 <img src="alliance.jpg" alt="" className="img-fluid" />
               </Link>
             </div>
-           
-            <nav className="navbar navbar-expand-lg navbar-dark bg-alliance ">
-              <button
-                className="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                {/* <Link className="navbar-brand">Brand</Link> */}
-                <span className="navbar-toggler-icon"></span>
-              </button>
 
-              <div
-                className="collapse navbar-collapse"
-                id="navbarSupportedContent"
-              >
-                <ul className="navbar-nav mr-auto">
-                  <li className="nav-item active">
-                    <Link
-                      className="nav-link"
-                      to="hero"
-                      smooth={true}
-                      duration={1500}
-                    >
-                      Home <span className="sr-only">(current)</span>{" "}
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link
-                      className="nav-link"
-                      to="about"
-                      smooth={true}
-                      duration={1500}
-                    >
-                      About{" "}
-                    </Link>
-                  </li>
-
-                  <li className="nav-item">
-                    <Link
-                      className="nav-link"
-                      to="team"
-                      smooth={true}
-                      duration={1500}
-                    >
-                      Team{" "}
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link
-                      className="nav-link"
-                      to="contact"
-                      smooth={true}
-                      duration={1500}
-                    >
-                      Contact{" "}
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link
-                      className="nav-link"
-                      to="services"
-                      smooth={true}
-                      duration={1500}
-                    >
-                      Services{" "}
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link
-                      className="nav-link"
-                      to="testimonials"
-                      smooth={true}
-                      duration={1500}
-                    >
-                      Testimonials{" "}
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link
-                      className="nav-link"
-                      to="why-us"
-                      smooth={true}
-                      duration={1500}
-                    >
-                      Why US{" "}
-                    </Link>
-                  </li>
-                  
-                </ul>
-                {/* <ul className="navbar-nav ml-auto">
-                  <li className="nav-item">
-                    <NavLink to="/register" className="nav-link">Register</NavLink>
-                  </li>
-                  <li className="nav-item">
-                    <NavLink to="/login" className="nav-link">Login</NavLink>
-                  </li>
-                </ul> */}
-              </div>
-            </nav>
+            <NavMenu />
           </div>
-         <div className="container">
-         <div className="row">
-           <div className="col-md-6 mx-auto text-white">
-             <h2>
-
-           <Typewriter
-  options={{
-    strings: ['This website is still under construction !', 'Thank you'],
-    autoStart: true,
-    loop: true,
-  }}
-/>
-  </h2>
-           </div>
-         </div>
-         </div>
+          <div className="container">
+            <div className="row">
+              <div className="col-md-6 mx-auto text-white">
+                <h2>
+                  <Typewriter
+                    options={{
+                      strings: [
+                        "This website is still under construction !",
+                        "Thank you",
+                      ],
+                      autoStart: true,
+                      loop: true,
+                    }}
+                  />
+                </h2>
+              </div>
+            </div>
+          </div>
         </div>
-       
       </header>
-      
+
       {/* <!-- ======= Hero Section ======= --> */}
-     <Hero/>
+      <Hero />
 
       <main id="main">
         {/* <!-- ======= Clients Section ======= --> */}
         {/* <Client/> */}
-        <About/>
+        <About />
 
-        <Counter/>
+        <Counter />
 
-       <WhyUs/>
+        <WhyUs />
 
         <section id="cta" className="cta">
           <div className="container">
@@ -182,42 +83,37 @@ const Home = () => {
                 mollit anim id est laborum.
               </p>
               <Link className="cta-btn nav-link" to="#">
-               Enroll now and start your journey
+                Enroll now and start your journey
               </Link>
             </div>
           </div>
         </section>
-      {/* Services section  */}
-       <Services/>
- {/* portifolio section  */}
-       {/* <Portifolio/> */}
+        {/* Services section  */}
+        <Services />
+        {/* portifolio section  */}
+        {/* <Portifolio/> */}
         <section id="testimonials" className="testimonials section-bg">
           <div className="container">
             <div className="row">
- 
-                <div className="section-title" data-aos="fade-right">
-                  <h2 className="text-white">Testimonials</h2>
-                </div>
+              <div className="section-title" data-aos="fade-right">
+                <h2 className="text-white">Testimonials</h2>
+              </div>
             </div>
-                <div className="row">
-                  <div className="col-lg-4">
-                    <Testimotials src={src1} />
-                  </div>
-                  <div className="col-lg-4">
-                    <Testimotials src={src2} />
-                  </div>
-                  <div className="col-lg-4">
-                    <Testimotials src={src3} />
-                  </div>
+            <div className="row">
+              {scrs.map((s) => (
+                <div className="col-lg-4">
+                  <Testimotials src={s} />
                 </div>
+              ))}
+            </div>
           </div>
         </section>
         {/* the team section */}
-         <Team/>
-       <Contact/>
+        <Team />
+        <Contact />
       </main>
 
-      <Footer/>
+      <Footer />
     </>
   );
 };

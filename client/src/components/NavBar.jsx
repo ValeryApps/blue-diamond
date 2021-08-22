@@ -9,18 +9,9 @@ import jwt_decode from "jwt-decode";
 const NavMenu = () => {
   const { auth } = useSelector((state) => ({ ...state }));
 
-  //let decoded;
-  // let isModerator = false;
   let isAdminUser;
   if (auth?.token) {
-    // console.log(jwt_decode(auth?.token));
-    // decoded = jwt_decode(auth?.token);
-    // const roles = decoded?.role;
     isAdminUser = jwt_decode(auth?.token).role.indexOf("AdminUser") !== -1;
-    // isAdmin = roles.indexOf("AdminUser") !== -1;
-    console.log(jwt_decode(auth?.token).role);
-    // isModerator = roles.indexOf("Moderator") !== -1;
-    // isMember = roles.indexOf("Member") !== -1;
   }
 
   const history = useHistory();
@@ -28,7 +19,7 @@ const NavMenu = () => {
   const logout = () => {
     localStorage.removeItem("user");
     dispatch(logoutAction());
-    history.push("/");
+    // history.push("/");
   };
   const loggedOut = () => {
     return (
@@ -74,9 +65,9 @@ const NavMenu = () => {
     <>
       <Navbar bg="" expand="lg" className="navbar-dark bg-alliance">
         <Container>
-          <Navbar.Brand as={Link} to="/">
+          {/* <Navbar.Brand as={Link} to="/">
             <img src="alliance.jpg" alt="" style={{ width: "150px" }} />
-          </Navbar.Brand>
+          </Navbar.Brand> */}
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
@@ -131,7 +122,7 @@ const NavMenu = () => {
                   </Nav.Link>
                 </>
               )}
-              {auth ? loggedIn() : loggedOut()}
+              {auth?.token ? loggedIn() : loggedOut()}
             </Nav>
 
             {/* <Form inline>
